@@ -1,95 +1,134 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hokkori-do | Aromatherapy Massage & Reiki</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hokkori-Do | Aromatherapy & Reiki Healing</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-      background: url('lavender-background.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #3c3c3c;
+    body { margin: 0; font-family: sans-serif; scroll-behavior: smooth; }
+    section { padding: 60px 20px; max-width: 800px; margin: auto; }
+    nav {
+      position: fixed; top: 0; width: 100%; background-color: rgba(245, 240, 255, 0.95);
+      border-bottom: 1px solid #ccc; z-index: 1000;
     }
-    .overlay {
-      background-color: rgba(255, 255, 255, 0.9);
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 2rem;
-      border-radius: 12px;
+    .nav-container {
+      max-width: 1000px; margin: auto; display: flex; justify-content: space-between;
+      align-items: center; padding: 12px 20px;
     }
-    h1 {
-      text-align: center;
-      font-size: 2.5rem;
-      color: #6b4c8b;
+    .nav-logo { font-weight: bold; font-size: 1.5em; color: #6a5acd; }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a {
+      text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s ease;
     }
-    h2 {
-      margin-top: 2rem;
-      color: #6b4c8b;
+    .nav-links a:hover { color: #6a5acd; }
+    .hamburger { display: none; flex-direction: column; cursor: pointer; }
+    .hamburger div {
+      width: 25px; height: 3px; background-color: #6a5acd; margin: 4px 0;
     }
-    .services, .about, .contact, .language {
-      margin-bottom: 2rem;
-    }
-    .booking-button {
-      display: inline-block;
-      background-color: #6b4c8b;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      text-align: center;
-      border-radius: 6px;
-      text-decoration: none;
-    }
-    .language {
-      text-align: right;
-      font-size: 0.9rem;
-    }
-    .japanese {
-      margin-top: 1rem;
-      font-family: 'Noto Sans JP', sans-serif;
-      color: #5c5c5c;
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none; flex-direction: column; background-color: rgba(245, 240, 255, 0.95);
+        position: absolute; top: 60px; right: 0; width: 200px; padding: 15px;
+        border-left: 1px solid #ccc; border-bottom: 1px solid #ccc;
+      }
+      .nav-links.show { display: flex; }
+      .hamburger { display: flex; }
     }
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <h1>Hokkori-do<br><small>ほっこり堂</small></h1>
-    <p>Welcome to Hokkori-do, a tranquil healing space in Newport Beach, CA, where body, mind, and spirit are gently renewed. We specialize in aromatherapy massage using premium doTERRA lavender essential oil and a selection of customized oils, along with Reiki energy healing sessions.</p>
-    <p class="japanese">ほっこり堂へようこそ。カリフォルニア州ニューポートビーチにある心と体の癒しの空間。高品質なドテラのラベンダー精油や、お客様の好みに合わせたエッセンシャルオイルを使ったアロママッサージ、そしてレイキヒーリングセッションをご提供しています。</p>
 
-    <div class="services">
-      <h2>Our Services</h2>
-      <ul>
-        <li><strong>Aromatherapy Massage:</strong> Tailored to your needs using therapeutic-grade essential oils.</li>
-        <li><strong>Reiki Energy Healing:</strong> A gentle, non-invasive technique that promotes deep relaxation and energetic balance.</li>
-        <li><strong>Combined Sessions:</strong> Enjoy the benefits of both massage and Reiki in a single, restorative experience.</li>
-      </ul>
-      <p class="japanese">サービス内容:<br>
-        ・アロママッサージ：高品質な精油を使用し、心身のリラックスを促進します。<br>
-        ・レイキ：やさしく穏やかなエネルギーで、心と体のバランスを整えます。<br>
-        ・組み合わせセッション：アロマとレイキを組み合わせた深い癒しの体験。</p>
+<nav>
+  <div class="nav-container">
+    <div class="nav-logo">Hokkori-Do</div>
+    <div class="nav-links" id="nav-links">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </div>
-
-    <div class="about">
-      <h2>About the Practitioner</h2>
-      <p>With over 20 years of experience, our certified practitioner blends skill, sensitivity, and spiritual awareness to support your healing journey.</p>
-      <p class="japanese">経験20年以上の認定セラピストが、丁寧に施術を行います。心と体の深い癒しをサポートいたします。</p>
-    </div>
-
-    <div class="contact">
-      <h2>Book a Session</h2>
-      <p>Sessions are by appointment only.</p>
-      <a class="booking-button" href="#">Book a Session</a>
-      <p class="japanese">ご予約制となっております。<br><a class="booking-button" href="#">ご予約はこちら</a></p>
-      <h3>Location</h3>
-      <p>Newport Beach, California<br>(Full address available after booking confirmation)</p>
-      <h3>Contact</h3>
-      <p>Email: (TBD)<br>Phone: (TBD)</p>
-    </div>
-
-    <div class="language">
-      <a href="#">日本語</a> / <a href="#">English</a>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div><div></div><div></div>
     </div>
   </div>
+</nav>
+<div style="height: 70px;"></div>
+
+<section id="hero" style="height: 400px; color: white; text-align: center; display: flex; flex-direction: column; justify-content: center; background: url('lavender-background.jpg') center center / cover no-repeat fixed;" data-aos="fade-in">
+  <img src="hokkorido.jpg" alt="Hokkori-Do Logo" style="max-width: 300px; margin: 0 auto 20px; display: block;">
+  <h1 style="font-size: 2.5em;">Welcome to Hokkori-Do</h1>
+  <p style="font-size: 1.2em;">Aromatherapy & Reiki Healing in Newport Beach</p>
+  <a href="#contact" style="margin-top: 20px; background: #9370DB; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px;">Schedule an Appointment</a>
+</section>
+
+
+<section id="services" style="scroll-margin-top: 80px;" data-aos="fade-up">
+  <h2>Our Services</h2>
+
+  <h3>Aromatherapy Massage（アロマセラピーマッサージ）</h3>
+  <p><em>Our Aromatherapy Massage is a soothing and holistic experience that uses carefully selected essential oils from doTERRA—renowned for their therapeutic purity. Through gentle massage techniques combined with the calming power of scent, we help you restore balance to your body and mind. This session is ideal for those experiencing stress, fatigue, or simply seeking deep relaxation and inner calm.</em></p>
+  <p>厳選されたdoTERRAのエッセンシャルオイルを使用し、心身のバランスを整えるアロマセラピーマッサージです。香りの力と優しい手技で、深いリラクゼーションと心の落ち着きをもたらします。ストレスや疲労の解消におすすめです。</p>
+
+  <h3>doTERRA Aroma Touch（アロマタッチ）</h3>
+  <p><em>Aroma Touch is a delicate wellness technique that involves lightly applying ingestible-quality doTERRA essential oils to your back and feet. Unlike traditional massage, this method uses no pressure, instead allowing the oils’ natural healing properties to absorb gently into your body. The experience promotes a sense of harmony, reduces tension, and enhances your body’s innate ability to heal—perfect for those who are sensitive to physical touch or prefer a more subtle form of relaxation.</em></p>
+  <p>doTERRA社の高品質な精油を使用し、背中や足裏を中心にやさしく塗布していくセラピーです。強い圧や揉みほぐしではなく、精油の力と手のぬくもりを通じて、自然治癒力を高め、深いリラックス状態へ導きます。敏感な方や刺激を避けたい方にも最適です。</p>
+
+  <h3>Reiki Healing – Hayashi Style Usui（レイキヒーリング 林式臼井霊気）</h3>
+  <p><em>Reiki Healing is a Japanese energy therapy that uses light hand movements to channel healing energy throughout the body. In the Hayashi Style Usui tradition, hands are gently held above the body from the feet to the head, allowing Reiki energy to flow where it is most needed. This non-invasive practice helps release emotional and energetic blockages, fostering deep peace, mental clarity, and inner healing. It is a gentle yet powerful approach to balancing the mind, body, and spirit.</em></p>
+  <p>日本発祥のエネルギー療法である霊気を、林式臼井霊気の伝統的な手法で提供します。手を軽くかざし、全身にレイキのエネルギーを流していきます。体だけでなく心にも穏やかな癒しをもたらし、深い安心感とバランスを取り戻すサポートとなります。</p>
+</section>
+
+
+
+<section id="pricing" style="scroll-margin-top: 80px;" data-aos="fade-up">
+  <h2>Pricing</h2>
+
+  <h3>Aromatherapy Massage</h3>
+  <ul>
+    <li><strong>60 minutes – $100:</strong> Foot bath, body massage<br>６０分 – ＄１００：足湯、全身マッサージ</li>
+    <li><strong>90 minutes – $140:</strong> Foot bath, body massage, head massage<br>９０分 – ＄１４０：足湯、全身マッサージ、ヘッドマッサージ</li>
+    <li><strong>120 minutes – $180:</strong> Foot bath, body massage, head massage, chest massage, abdominal massage<br>１２０分 – ＄１８０：足湯、全身マッサージ、ヘッドマッサージ、胸部マッサージ、腹部マッサージ</li>
+  </ul>
+
+  <h3>doTERRA Aroma Touch</h3>
+  <ul>
+    <li><strong>60 minutes – $100:</strong> Foot bath, face-down body application, head massage<br>６０分 – ＄１００：足湯、うつ伏せオイル塗布、ヘッドマッサージ</li>
+  </ul>
+
+  <h3>Reiki Healing – Hayashi Style Usui</h3>
+  <ul>
+    <li><strong>60 minutes – $80</strong><br>６０分 – ＄８０</li>
+    <li><strong>90 minutes – $110</strong><br>９０分 – ＄１１０</li>
+  </ul>
+</section>
+
+
+<section id="about" style="scroll-margin-top: 80px;" data-aos="fade-up">
+  <h2>About the Therapist</h2>
+  <p>(About content here...)</p>
+</section>
+
+<section id="contact" style="scroll-margin-top: 80px;" data-aos="fade-up">
+  <h2>Contact Hokkori-Do</h2>
+  
+<p style="font-size: 1.1em; margin-bottom: 20px;">
+  To book an appointment, please feel free to call and leave a voicemail or send us an email. We will respond as soon as possible to arrange your session. At this time, we are not using an online booking system, but we are happy to coordinate with you directly to find a time that works best.<br><br>
+  ご予約をご希望の方は、お気軽にお電話のボイスメッセージを残すか、メールでご連絡ください。折り返しこちらからご連絡し、ご希望の日時を調整させていただきます。現在はオンライン予約システムは導入しておりませんが、お客様と直接ご相談のうえ、最適な時間をご案内させていただきます。
+</p>
+<p>📍 20301 SW Acacia St STE 150, Newport Beach, CA 92660</p>
+  <p>📞 <a href="tel:9494156178">949-415-6178</a></p>
+  <p>📧 <a href="mailto:info@hokkorido.com">info@hokkorido.com</a></p>
+  <iframe src="https://www.google.com/maps?q=20301+SW+Acacia+St+STE+150,+Newport+Beach,+CA+92660&output=embed" width="100%" height="300" style="border:0; border-radius: 10px;"></iframe>
+</section>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+  function toggleMenu() {
+    document.getElementById('nav-links').classList.toggle('show');
+  }
+</script>
 </body>
 </html>
