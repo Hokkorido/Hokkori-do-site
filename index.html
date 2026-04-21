@@ -68,6 +68,100 @@
   <a href="#contact" style="margin-top: 20px; background: #9370DB; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px;">Schedule an Appointment</a>
 </section>
 
+<title>Image Carousel</title>
+<style>
+  .carousel {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .slides {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+  }
+
+  .slides img {
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  .dots {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .dot {
+    height: 12px;
+    width: 12px;
+    margin: 5px;
+    display: inline-block;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .dot.active {
+    background-color: #333;
+  }
+</style>
+</head>
+<body>
+
+<div class="carousel">
+  <div class="slides" id="slides">
+    <img src="image1.jpg" alt="">
+    <img src="image2.jpg" alt="">
+    <img src="image3.jpg" alt="">
+    <img src="image4.jpg" alt="">
+    <img src="image5.jpg" alt="">
+    <img src="image6.jpg" alt="">
+    <img src="image7.jpg" alt="">
+  </div>
+</div>
+
+<div class="dots" id="dots"></div>
+
+<script>
+  const slides = document.getElementById("slides");
+  const totalSlides = slides.children.length;
+  const dotsContainer = document.getElementById("dots");
+
+  let index = 0;
+
+  // Create dots
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement("span");
+    dot.classList.add("dot");
+    dot.addEventListener("click", () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+  }
+
+  function updateCarousel() {
+    slides.style.transform = `translateX(-${index * 100}%)`;
+    document.querySelectorAll(".dot").forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  }
+
+  function goToSlide(i) {
+    index = i;
+    updateCarousel();
+  }
+
+  function autoSlide() {
+    index = (index + 1) % totalSlides;
+    updateCarousel();
+  }
+
+  // Initialize
+  updateCarousel();
+  setInterval(autoSlide, 3000); // Change image every 3 seconds
+</script>
+
+</body>  
 
 <section id="services" style="scroll-margin-top: 80px;" data-aos="fade-up">
   <h2>Our Services</h2>
